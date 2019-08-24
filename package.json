@@ -4,16 +4,23 @@
   "description": "Example API with Node.js, Express and MySQL",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node src/index.js",
+    "dev": "nodemon --exec babel-node src/index.js",
+    "stg": "nodemon --exec babel-node src/index.js",
+    "prd": "nodemon --exec babel-node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "body-parser": "^1.18.3",
     "dotenv": "^8.0.0",
     "express": "^4.16.4",
-    "mysql": "^2.16.0"
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^1.6.5",
+    "password-validator": "^4.1.2",
+    "sequelize": "^5.15.1",
+    "sequelize-cli": "^5.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
