@@ -1,3 +1,4 @@
+import environment from "dotenv"
 import express from "express"
 import bodyParser from "body-parser"
 
@@ -5,6 +6,8 @@ import generalRouter from "./routers/generalRouter.js"
 import loginRouter from "./routers/loginRouter.js"
 import registerRouter from "./routers/registerRouter.js"
 import usersRouter from "./routers/usersRouter.js"
+
+environment.config()
 
 let app = express()
 
