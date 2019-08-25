@@ -1,3 +1,4 @@
+import jwt from "jsonwebtoken";
 import models from "../database/models"
 import passwordValidator from "./base/passwordValidator"
 import {createFailureResponse, createSuccessResponse} from "../routers/base/apiResponse";
@@ -9,7 +10,11 @@ export const register = async (data) => {
     if (valid) {
         try {
             const user = await User.create(data)
-            return createSuccessResponse(user)
+            const token = jwt.sign({username: user.username}, process.env.JWT_SECRET)
+            return createSuccessResponse({
+                user: user,
+                token: token
+            })
         } catch (error) {
             throw createFailureResponse(error.message)
         }
