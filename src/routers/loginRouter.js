@@ -1,10 +1,10 @@
 import express from "express"
 import {login} from "../controller/loginController";
 
-const router = express.Router()
+const router = express.Router();
 
 router.post("/", (req, res) => {
-    console.log("Login route called.")
+    console.log("Login route called.");
     login(req.body)
         .then(response => {
             res.json(response)
@@ -12,6 +12,6 @@ router.post("/", (req, res) => {
         .catch(error => {
             res.status(401).json(error)
         })
-})
+});
 
 export default router
